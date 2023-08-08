@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Form</title>
+    <style>
+        html,body {
+            color: #ffffff; 
+            font-family: 'Lato', sans-serif;
+            width: 99%;
+            height: 99%;
+            overflow: hidden;
+        }
+        .hide-receipt-scroll {
+            overflow: hidden;
+            width: 99%;
+            height: 100%;
+        }
+        .receipt-container {
+            overflow-y: scroll;
+            width: 56%;
+            height: 100%;
+            scrollbar-width: none;
+        }
+        .indicator {
+            width: 2px;
+            height: 160px;
+            padding: 13px;
+            background-color: rgb(27, 192, 27);
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            position: absolute;
+            left: 0px;
+        }
+        .receipt {
+            max-width: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 10px;
+            padding: 20px;
+            margin-bottom: 5px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Divide the header into two equal sections */
+            gap: 10px; /* Add a gap between the sections */
+            background-color: black; /* Set the background color to black */
+            margin-bottom: 20px; /* Add margin at the bottom */
+            position: relative; /* Set position to relative for the pseudo-element */
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute; /* Position the pseudo-element absolutely */
+            bottom: -5px; /* Adjust the distance from the bottom */
+            width: 95%; /* Adjust the width */
+            height: 1px; /* Adjust the line thickness */
+            background-color: white; /* Set the line color to white */
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-rows: repeat(3, auto); /* Create three rows of equal height */
+            gap: 10px; /* Add a gap between the rows */
+            background-color: black; /* Set the background color to black */
+        }
+
+        .cost-container {
+            display: flex;
+            align-items: flex-end;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .dollar {
+            font-size: 36px;
+            margin-right: 5px;
+        }
+
+        .vendor {
+            font-size: 32px;
+            margin-left: 15px;
+        }
+        
+        .cent {
+            font-size: 18px;
+            position: relative;
+            top: -15px; /* Adjust the amount to sit higher */
+        }
+        .form-wrapper{
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 13px 10px 20px 10px;
+            width: 25rem;
+        }
+        .input-label{
+            padding-top: 15px;
+        }
+        .input{
+            background-color: black;
+            border: black;
+            border-bottom: 2px solid white;
+            color: white;
+            margin: 15px 0 8px 0;
+            width: 90%;
+            position: relative;
+            left: 20px;
+        }
+        .button{
+            border: white;
+            background-color: white;
+            height: 20px;
+            width: 70px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="hide-receipt-scroll">
+    <div class="receipt-container">
+
+    
+    <div class="receipt">
+        <div class="indicator"></div>
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">3,265</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Costar</div>
+                </div>
+            </div>
+            <div>
+                <!-- Right Section -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Savings
+            </div>
+            <div>
+                Check
+            </div>
+            <div>
+                6 / 25 / 2023
+            </div>
+        </div>
+    </div>
+
+
+    <div class="receipt">
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">3</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Starbucks</div>
+                </div>
+            </div>
+            <div>
+                <!-- Right Section -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Wells Fargo (7258)
+            </div>
+            <div>
+                Coffee
+            </div>
+            <div>
+                6 / 25 / 2023
+            </div>
+        </div>
+    </div>
+
+    <div class="receipt">
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">25</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Tavern</div>
+                </div>
+            </div>
+            <div>
+                Pending
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Chase Freedom (7665)
+            </div>
+            <div>
+                Drinks
+            </div>
+            <div>
+                6 / 28 / 2023
+            </div>
+        </div>
+    </div>
+
+    <div class="receipt">
+        <div class="indicator"></div>
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">3,265</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Costar</div>
+                </div>
+            </div>
+            <div>
+                <!-- Right Section -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Savings
+            </div>
+            <div>
+                Check
+            </div>
+            <div>
+                6 / 25 / 2023
+            </div>
+        </div>
+    </div>
+
+
+    <div class="receipt">
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">3</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Starbucks</div>
+                </div>
+            </div>
+            <div>
+                <!-- Right Section -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Wells Fargo (7258)
+            </div>
+            <div>
+                Coffee
+            </div>
+            <div>
+                6 / 25 / 2023
+            </div>
+        </div>
+    </div>
+
+    <div class="receipt">
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">25</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Tavern</div>
+                </div>
+            </div>
+            <div>
+                Pending
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Chase Freedom (7665)
+            </div>
+            <div>
+                Drinks
+            </div>
+            <div>
+                6 / 28 / 2023
+            </div>
+        </div>
+    </div>
+
+    <div class="receipt">
+        <div class="indicator"></div>
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">3,265</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Costar</div>
+                </div>
+            </div>
+            <div>
+                <!-- Right Section -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Savings
+            </div>
+            <div>
+                Check
+            </div>
+            <div>
+                6 / 25 / 2023
+            </div>
+        </div>
+    </div>
+
+
+    <div class="receipt">
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">3</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Starbucks</div>
+                </div>
+            </div>
+            <div>
+                <!-- Right Section -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Wells Fargo (7258)
+            </div>
+            <div>
+                Coffee
+            </div>
+            <div>
+                6 / 25 / 2023
+            </div>
+        </div>
+    </div>
+
+    <div class="receipt">
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">25</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Tavern</div>
+                </div>
+            </div>
+            <div>
+                Pending
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Chase Freedom (7665)
+            </div>
+            <div>
+                Drinks
+            </div>
+            <div>
+                6 / 28 / 2023
+            </div>
+        </div>
+    </div>
+
+    <div class="receipt">
+        <div class="indicator"></div>
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">3,265</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Costar</div>
+                </div>
+            </div>
+            <div>
+                <!-- Right Section -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Savings
+            </div>
+            <div>
+                Check
+            </div>
+            <div>
+                6 / 25 / 2023
+            </div>
+        </div>
+    </div>
+
+
+    <div class="receipt">
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">3</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Starbucks</div>
+                </div>
+            </div>
+            <div>
+                <!-- Right Section -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Wells Fargo (7258)
+            </div>
+            <div>
+                Coffee
+            </div>
+            <div>
+                6 / 25 / 2023
+            </div>
+        </div>
+    </div>
+
+    <div class="receipt">
+        <div class="header">
+            <div>
+                <div class="cost-container">
+                    <div class="cent">$</div>
+                    <div class="dollar">25</div>
+                    <div class="cent">.29</div>
+                    <div class="vendor">Tavern</div>
+                </div>
+            </div>
+            <div>
+                Pending
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                Chase Freedom (7665)
+            </div>
+            <div>
+                Drinks
+            </div>
+            <div>
+                6 / 28 / 2023
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
