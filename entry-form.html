@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Form</title>
+    <style>
+        html,body {
+            color: #ffffff; 
+            font-family: 'Lato', sans-serif;
+        }
+        .form-wrapper{
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 13px 10px 20px 10px;
+            width: 25rem;
+        }
+        .input-label{
+            padding-top: 15px;
+        }
+        .input{
+            background-color: black;
+            border: black;
+            border-bottom: 2px solid white;
+            color: white;
+            margin: 15px 0 8px 0;
+            width: 90%;
+            position: relative;
+            left: 20px;
+        }
+        .button{
+            border: white;
+            background-color: white;
+            height: 20px;
+            width: 70px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-wrapper">
+        <h1>Receipt Form</h1>
+
+        <label class="input-label" for="amount">Amount:</label>
+        <input class="input" type="text" id="amount" name="amount" step="0.01" required>
+        <br><br>
+
+        <label class="input-label" for="vendor">Vendor:</label>
+        <input class="input" type="text"  id="vendor" name="vendor" required>
+        <br><br>
+
+        <label class="input-label" for="vendor">Description:</label>
+        <input class="input" type="text"  id="vendor" name="vendor" required>
+        <br><br>
+
+        <label class="input-label" for="account">Account:</label>
+        <select class="input" id="account" name="account" required>
+            <option value="account1">Account 1</option>
+            <option value="account2">Account 2</option>
+            <option value="account3">Account 3</option>
+        </select>
+        <br><br>
+
+        <label class="input-label"  for="date">Date:</label>
+        <input class="input" type="date" id="date" name="date" required>
+        <br><br>
+
+        <label  class="input-label"  for="status">Status:</label>
+        <select class="input" id="status" name="status" required>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+        </select>
+        <br><br><br>
+
+        <button class="button" >Submit</button>
+    </div>
+</body>
+</html>
