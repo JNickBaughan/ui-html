@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Form</title>
+    <style>
+        html,body {
+            color: #ffffff; 
+            font-family: 'Lato', sans-serif;
+        }
+        .form-wrapper{
+            color: white;
+            border-radius: 10px;
+            padding: 13px 10px 20px 10px;
+            width: 25rem;
+        }
+        .input-label{
+            padding-top: 15px;
+        }
+        .input{
+            background-color: white;
+            border: solid 2px black;
+            color: black;
+            height: 30px;
+        }
+        .button{
+            border: white;
+            background-color: white;
+            height: 20px;
+            width: 70px;
+            border-radius: 2px;
+        }
+        .hidden{
+            visibility: hidden;
+        }
+        .input-options{
+            border: solid 2px black;
+            border-top: 0px;
+        }
+        .input-option{
+           border-bottom: solid 1px grey;
+           color: black;
+           padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-wrapper">
+
+        <label class="input-label" for="amount">Amount:</label>
+        <div class="input"></div>
+        <input class="hidden" type="text" id="amount" name="amount" step="0.01" required>
+        <br><br>
+        <br><br>
+
+        <label class="input-label" for="amount">Amount:</label>
+        <div class="input"></div>
+        <div class="input-options">
+            <div class="input-option">Chase Credit Card</div>
+            <div class="input-option">Wells Fargo Credit Card</div>
+            <div class="input-option">Connects FCU</div>
+        </div>
+
+        <input class="hidden" type="text" id="amount" name="amount" step="0.01" required>
+
+    </div>
+</body>
+</html>
