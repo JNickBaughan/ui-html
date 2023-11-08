@@ -19,6 +19,10 @@ html,body {
             height: 26px;
             padding: 8px 7px 0;
         }
+        .focused{
+            border: solid 2px blue;
+            box-shadow: 3px 3px 3px 3px blue;
+        }
         .hidden{
             opacity: 0;
         }

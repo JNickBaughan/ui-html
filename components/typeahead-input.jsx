@@ -11,18 +11,26 @@ export function TypeaheadInput() {
     const inputKey = e.key;
     setInput(`${input}${inputKey}`)
   }
-  
+
+  const _onBlur = () => setHasFocus(false);
+
   return (
   <>
     <label className="input-label" for="amount">Amount:</label>
-    <div onClick={() => inputRef?.current.focus()} className="input" >{input}</div>
+    <div onClick={() => { 
+          inputRef?.current.focus();
+          setHasFocus(true);
+      }} 
+    className={`input${hasFocus ? " focused" : ""}`}>
+      {input}
+    </div>
     <input ref={inputRef} 
-    className={"hidden"}
-    id="amount" 
-    onKeyUp={_keyInput}
-    // onBlur={this._onBlur}
-    name="amount" ></input>
-    
+      className={"hidden"}
+      id="amount" 
+      onKeyUp={_keyInput}
+      onBlur={_onBlur}
+      name="amount" >
+    </input>
   </>
   );
 }
