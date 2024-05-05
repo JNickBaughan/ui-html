@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: "Source Sans Pro", "Arial", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.2;
+    color: darkslategray;
+}
+
+.flex-grid {
+    display: flex;
+    padding-bottom: .75vh;
+    margin: 1px 2px;
+    padding: 2px;
+}
+
+.header {
+    border-bottom: 2px solid;
+    border-bottom-color: black;
+    font-size: 1.4em;
+}
+
+.border-top {
+    border-top: 1px solid;
+    border-top-color: black;
+}
+
+.col {
+  flex: 1;
+  margin: 1px 2px;
+  padding: 2px;
+}
+
+@media (max-width: 400px) {
+  .flex-grid {
+    display: block;
+    
+  }
+}
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .col {
+  width: 32%;
+}
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<div class="flex-grid header">
+    <div class="col">Date</div>
+    <div class="col flex-grid-thirds">Rate</div>
+    <div class="col">Workds</div>
+</div>
+<div class="flex-grid">
+    <div class="col">Date</div>
+    <div class="col flex-grid-thirds">Rate</div>
+    <div class="col">Workds</div>
+</div>
+<div class="flex-grid border-top">
+    <div class="col">Date</div>
+    <div class="col flex-grid-thirds">Rate</div>
+    <div class="col">Workds</div>
+</div>
+<div class="flex-grid border-top">
+    <div class="col">Date</div>
+    <div class="col flex-grid-thirds">Rate</div>
+    <div class="col">Workds</div>
+</div>
+
+
+</body>
+</html>
