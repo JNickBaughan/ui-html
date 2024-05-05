@@ -2,6 +2,7 @@
 <html>
 <head>
 <style>
+  /* https://codepen.io/CTNieves/pen/LZmLox */
 body {
     font-family: "Source Sans Pro", "Arial", sans-serif;
     font-size: 1.2em;
@@ -17,13 +18,26 @@ body {
 }
 
 .header {
-    border-bottom: 2px solid;
-    border-bottom-color: black;
     font-size: 1.4em;
 }
 
+.border-bottom {
+    border-bottom: 1px solid;
+    border-bottom-color: black;
+}
+.border-bottom-bold {
+  border-bottom: 2px solid;
+  border-bottom-color: black;
+}
+
+
 .border-top {
     border-top: 1px solid;
+    border-top-color: black;
+}
+
+.border-top-bold {
+    border-top: 2px solid;
     border-top-color: black;
 }
 
@@ -46,31 +60,72 @@ body {
 .flex-grid-thirds .col {
   width: 32%;
 }
+
+.pagination {
+  padding-top: 3vh;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-count {
+  line-height: 3vh;
+  padding: 0px 10px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
 </style>
 </head>
 <body>
 
 <h1>This is a heading</h1>
-<div class="flex-grid header">
+<div class="flex-grid header border-bottom-bold">
     <div class="col">Date</div>
-    <div class="col flex-grid-thirds">Rate</div>
-    <div class="col">Workds</div>
+    <div class="col flex-grid-thirds">Heart Rate</div>
+    <div class="col">Diastolic</div>
+    <div class="col">Systolic</div>
 </div>
 <div class="flex-grid">
     <div class="col">Date</div>
     <div class="col flex-grid-thirds">Rate</div>
     <div class="col">Workds</div>
-</div>
-<div class="flex-grid border-top">
-    <div class="col">Date</div>
-    <div class="col flex-grid-thirds">Rate</div>
     <div class="col">Workds</div>
 </div>
 <div class="flex-grid border-top">
     <div class="col">Date</div>
     <div class="col flex-grid-thirds">Rate</div>
     <div class="col">Workds</div>
+    <div class="col">Workds</div>
 </div>
+<div class="flex-grid border-top">
+    <div class="col">Date</div>
+    <div class="col flex-grid-thirds">Rate</div>
+    <div class="col">Workds</div>
+    <div class="col">Workds</div>
+</div>
+<div class="border-top-bold pagination">
+  <span><i class="arrow left"></i><i class="arrow left"></i></span> 
+  <span><i class="arrow left"></i></i></span>
+    <span class="pagination-count">5 out of 134 Records</span>
+  <span><i class="arrow right"></i></i></span>
+  <span><i class="arrow right"></i><i class="arrow right"></i></span> 
+</div>
+
+
 
 
 </body>
